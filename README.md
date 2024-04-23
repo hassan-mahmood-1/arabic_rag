@@ -6,29 +6,32 @@ This repository contains a system for processing user queries, and generating re
 
 **Functionality:**
 
-**Data Ingestion:** PDF data provided by clients is ingested into the Qdrant Vector Database for efficient storage and retrieval.
+**1-Data Ingestion:** PDF data provided by clients is ingested into the Qdrant Vector Database for efficient storage and retrieval.
 
-**Embedding Data:** Upon startup, the application loads pre-existing vector embeddings of PDF data using the OpenAI embedding model, facilitating quick access during search operations.
+**2-Embedding Data:** Upon startup, the application loads pre-existing vector embeddings of PDF data using the OpenAI embedding model, facilitating quick access during search operations.
 
-**User Query:** Users can submit queries through the frontend interface, initiating the search process.
+**3-User Query:** Users can submit queries through the frontend interface, initiating the search process.
 
-**Embedding Query:**The OpenAI embedding model processes the user's query text, generating an embedding representation to capture semantic similarities.
+**4-Embedding Query:**The OpenAI embedding model processes the user's query text, generating an embedding representation to capture semantic similarities.
 
-**Search in Vector Database:** Embedded queries are compared with chunks of text stored in the vector database using cosine similarity, identifying relevant matches.
+**5-Search in Vector Database:** Embedded queries are compared with chunks of text stored in the vector database using cosine similarity, identifying relevant matches.
 
-**Retrieve Chunks:** Text chunks with high cosine similarity scores to the query are retrieved from the vector database, forming the basis for further analysis.
+**6-Retrieve Chunks:** Text chunks with high cosine similarity scores to the query are retrieved from the vector database, forming the basis for further analysis.
 
-**Prompt Generation:** Retrieved text chunks and the original query are passed to the OpenAI language model (GPT-3.5) to generate a contextual prompt, providing additional context for answer generation.
+**7-Prompt Generation:** Retrieved text chunks and the original query are passed to the OpenAI language model (GPT-3.5) to generate a contextual prompt, providing additional context for answer generation.
 
-**Answer Generation:** The contextual prompt and retrieved text chunks serve as input to the GPT-3.5 model, which generates a response based on the provided context and query.
+**8-Answer Generation:** The contextual prompt and retrieved text chunks serve as input to the GPT-3.5 model, which generates a response based on the provided context and query.
 
-**Return Response:** The generated answer is sent back to the frontend for display to the user, completing the query-response cycle.
+**9-Return Response:** The generated answer is sent back to the frontend for display to the user, completing the query-response cycle.
 
 **Usage**
 
 1-Clone this repository to your local machine.
+
 2-Install necessary dependencies listed in requirements.txt.
+
 3-Start the application and access the frontend interface to submit queries and retrieve responses.
+
 
 
 
